@@ -1,0 +1,197 @@
+<ion-view view-title="Favourite">
+  <ion-content class="appStyle" ng-controller="FavouritesController">
+
+<div ng-if="key_add">
+
+<ion-list-card>
+<div class="item item-avatar Notes" align="right">
+  <h2 class="fontNoteStyleTitle"><i class="ion-plus"></i> Add Favourites</h2>
+  <p class="fontNoteStyleDes"><i class="ion-sport"></i> เพื่อความชอบส่วนบุคคล</p>
+</div>
+</ion-list-card>
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Favourite" ng-model="title">
+  </label>
+  <ion-list>
+  <ion-radio ng-model="choice" ng-value="'A'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/sport.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Sports</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="choice" ng-value="'B'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/food.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Foods</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="choice" ng-value="'C'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/movie.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Movies</span>
+      </div>
+    </div>
+
+  </ion-radio>
+
+  <ion-radio ng-model="choice" ng-value="'D'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/game.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Games</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="choice" ng-value="'E'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/music.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Musics</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="choice" ng-value="'F'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/other.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Others</span>
+      </div>
+    </div>
+
+  </ion-radio>
+
+  </ion-list>
+
+  <div class="col" align="center">
+    <label class="item item-button" >
+      <button class="button button-outline button-block button-calm" ng-click="submitAdd(title, choice)">Add Favourite</button>
+    </label>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div ng-repeat="(name, r) in favRs" ng-if="name == key_edit">
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Favourite" ng-model="r.title">
+  </label>
+  <ion-list>
+  <ion-radio ng-model="r.favourite" ng-value="'A'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/sport.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Sports</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="r.favourite" ng-value="'B'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/food.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Foods</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="r.favourite" ng-value="'C'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/movie.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Movies</span>
+      </div>
+    </div>
+
+  </ion-radio>
+
+  <ion-radio ng-model="r.favourite" ng-value="'D'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/game.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Games</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="r.favourite" ng-value="'E'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/music.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Musics</span>
+      </div>
+    </div>
+  </ion-radio>
+
+  <ion-radio ng-model="r.favourite" ng-value="'F'">
+    <div class="row">
+      <div class="col" align="right">
+        <img ng-src="img/other.png" width="25%" ng-model="img">
+      </div>
+      <div class="col">
+        <span style="font-weight: bold; font-size:larger;">Others</span>
+      </div>
+    </div>
+
+  </ion-radio>
+
+  </ion-list>
+
+  <div class="col" align="center">
+    <label class="item item-button" >
+      <button class="button button-outline button-block button-energized" ng-click="submitEdit(name, r.key, r.perKey, r.title, r.favourite, r.pictureURL)">Edit Favourite</button>
+    </label>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,54 @@
+<ion-view view-title="Add Personal">
+  <ion-content class="appStyle" ng-controller="PersonalController">
+
+<ion-list-card>
+<div class="item item-avatar Notes" align="right">
+  <h2 class="fontNoteStyleTitle"><i class="ion-plus"></i> Add Personal</h2>
+  <p class="fontNoteStyleDes"><i class="ion-sport"></i> เพื่อบุคคลที่คุณพบ</p>
+</div>
+</ion-list-card>
+
+<div class="list list-inset">
+
+
+  <label class="item item-input">
+    <input type="text" placeholder="Name" ng-model="name">
+  </label>
+
+  <label class="item item-input">
+    <textarea rows="3" cols="80" placeholder="Description" ng-model="description"></textarea>
+  </label>
+
+
+    <ion-list align="left">
+      <ion-checkbox ng-model="addPerson.friend">My Friend</ion-checkbox>
+      <ion-checkbox ng-model="addPerson.family">My Family</ion-checkbox>
+      <ion-checkbox ng-model="addPerson.boy">Boy</ion-checkbox>
+      <ion-checkbox ng-model="addPerson.girl">Girl</ion-checkbox>
+    </ion-list>
+
+    <ion-list align="left">
+      <ion-checkbox ng-model="addPerson.favourite">My Favourite</ion-checkbox>
+    </ion-list>
+
+
+
+
+    <div  ng-click="clickPic();">
+        <img ng-src="{{pictureURL}}" alt="" width="100%" ng-model="pictureURL">
+
+    </div>
+
+
+  <label class="item item-button" >
+    <button class="button button-block button-positive" ng-click="submit(name, description,  addPerson.friend, addPerson.family, addPerson.boy, addPerson.girl, addPerson.favourite, pictureURL);">Add Personal</button>
+  </label>
+
+</div>
+
+
+
+
+
+  </ion-content>
+</ion-view>

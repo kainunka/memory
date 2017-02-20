@@ -1,0 +1,342 @@
+/* Empty. Add your own CSS if you like */
+/* ===========Root Style=================== */
+
+.scroll {
+  height: 100%;
+}
+
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+
+.starColor {
+  color: #FFEB3B;
+}
+
+.headFriend {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  border: dashed 1px #90A4AE;
+  color: #01579B;
+}
+
+.pageFriend {
+  background-color: #0D47A1;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+
+.pageFriend h2 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageFriend p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageFamily {
+  background-color: #B71C1C;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+
+.pageFamily h2 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageFamily p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageBoy {
+  background-color: #004D40;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+
+.pageBoy h2 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageBoy p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageGirl {
+  background-color: #F57F17;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+
+.pageGirl h2 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageGirl p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageLover {
+  background-color: #E91E63;
+  font-style: italic;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(opacity=50);
+}
+
+.pageLover h2 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pageLover p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+.pageContent {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+
+
+.pageNote {
+  background-color: #01579B;
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+}
+
+.pageNote h2 {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.pageNote p {
+  color: #ffffff;
+}
+
+.pageNote  {
+  color: #FFFFFF;
+}
+
+.cardName {
+  font-weight: bolder;
+  background-color: #263238;
+  color: #fff;
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+
+}
+
+.cardName p {
+  font-weight: normal;;
+  color: #E0E0E0;
+
+}
+
+.cardPic {
+  background-color: #ECEFF1;
+}
+
+.pageNav {
+  background-color: #EEEEEE;
+}
+
+
+.Notes {
+  background-color: #01579B;
+}
+
+.Notes h2 {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.Notes p {
+  color: #FFFFFF;
+}
+
+.cardNote {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+.slideStyle {
+  /*height: 100%;*/
+}
+
+.row.unlimited-items {
+  flex-wrap: wrap;
+}
+
+.row.unlimited-items .col{
+  flex: none;
+  width: 33%;
+}
+
+
+.test {
+  text-align: center;
+
+}
+
+.h {
+  height: 10%;
+}
+
+.fontNoteStyleTitle {
+  color: #d35400;
+}
+.fontNoteStyleDes {
+  color: #34495e;
+}
+
+.cardStyle {
+  background-color: #ffffff;
+  text-align: left;
+}
+
+
+.appStyle {
+  background-color: #F5F5F5;
+}
+
+
+/* =========Login Page=================================  */
+.LoginBlock {
+  margin-top: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.loginStyle {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20%;
+}
+
+.picLogin {
+  margin-bottom: 100px;
+}
+
+.titleLogin {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.titleLogin h1 {
+  font-size: 50pt;
+}
+
+/* -------Menu Bar-------- */
+.avartar {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  text-align: center;
+  width: 100%;
+}
+
+.block {
+  border: solid 1px #CCC;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #0066CC;
+}
+
+/* ==================Page Home ======================= */
+
+.homeBlock {
+  margin-top: 15%;
+  text-align: center;
+}
+
+.imgHome img {
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+.btHome {
+  font-size: 20pt;
+}
+
+/* -------Page About-------- */
+
+.aboutBlock {
+
+  text-align: center;
+}
+
+.imgAbout img {
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+.dtAbout {
+  text-align: left;
+}
+
+.btAbout {
+  font-size: 20pt;
+}
+
+.profileTitle {
+  font-weight: bold;
+  text-align: center;
+}
+
+.profileFont {
+  font-weight: bold;
+}
+
+
+/* -------Page Favourites-------- */
+
+
+/* -------Page Add Personal */
+
+.imgBlock {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}

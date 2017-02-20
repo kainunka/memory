@@ -1,0 +1,68 @@
+<ion-view view-title="Friend Personal">
+  <ion-content class="appStyle" ng-controller="HomeController">
+
+        <div class="box 1">
+          <ion-list-card>
+              <div class="item item-avatar pageFriend">
+              <img ng-src="img/friend.png">
+              <h2>My Friend</h2>
+              <p>การพบกันกับเพื่อนของคุณ</p>
+              </div>
+          </ion-list-card>
+          <div class="pageContent">
+
+            <div class="row unlimited-items">
+              <div class="col" ng-repeat="(name, r) in rs" ng-if="r.friend == true">
+
+                <div ng-if="r.favourite == true">
+
+                  <ion-card ng-click="{{clickPerson}}">
+                    <div style="{{bgStyle}}">
+                        <div class="{{animate}} cardPic">
+                            <img ng-src="{{r.pictureURL}}" width="100%" alt="">
+                        </div>
+
+                        <div class="{{animate}} item item-divider cardName" align="left">
+
+                            <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                            <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                            {{r.name}}
+                            <p>{{r.description}}</p>
+                        </div>
+                    </div>
+                  </ion-card>
+                </div>
+
+                  <div ng-if="r.favourite == false">
+
+                    <ion-card ng-click="{{clickPerson}}">
+                      <div style="{{bgStyle}}">
+                          <div class="{{animate}} cardPic">
+                              <img ng-src="{{r.pictureURL}}" width="100%" alt="">
+                          </div>
+
+                          <div class="{{animate}} item item-divider cardName" align="left">
+
+                              <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                              <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                              {{r.name}}
+                              <p>{{r.description}}</p>
+                          </div>
+                      </div>
+                    </ion-card>
+                  </div>
+
+                </div>
+
+
+                <div class="col" ng-if="countFriend == 0">
+                    {{errNoPer}}
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+  </ion-content>
+</ion-view>

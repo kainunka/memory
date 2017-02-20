@@ -1,0 +1,128 @@
+<ion-view view-title="Notes">
+
+<ion-content class="appStyle">
+
+
+  <script id="templates/addNote.html" type="text/ng-template">
+    <ion-modal-view class="transparent" style="width: 90%; height: 50%; top: 5%; left: 5%; right: 5%; bottom: 10%;">
+      <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Write Note</h1>
+        <button class="button button-clear button-primary" ng-click="addNotes.hide()">Cancel</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <div class="col" align="center">
+
+            <button class="button button-block" ng-click="submitAdd(r.title, r.description)"> <i class="ion-plus"></i> Save</button>
+
+        </div>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Title" ng-model="r.title" >
+          </label>
+
+          <label class="item item-input">
+            <textarea rows="5" cols="80" placeholder="Description" ng-model="r.description"></textarea>
+          </label>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+
+
+  <script id="templates/editNote.html" type="text/ng-template">
+    <ion-modal-view class="transparent" style="width: 90%; height: 50%; top: 5%; left: 5%; right: 5%; bottom: 10%;">
+      <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Edit Note</h1>
+        <button class="button button-clear button-primary" ng-click="editNotes.hide()">Cancel</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+
+        <div ng-repeat="(name, r) in noteNoteRs" ng-if="name == key_edit">
+
+          <div class="col" align="center">
+
+              <button class="button button-outline button-block button-energized" ng-click="submitEdit(name, r.key, r.perKey, r.title, r.description)">Edit Note</button>
+
+          </div>
+
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Title" ng-model="r.title" >
+          </label>
+
+          <label class="item item-input">
+            <textarea rows="5" cols="80" placeholder="Description" ng-model="r.description"></textarea>
+          </label>
+        </div>
+        </div>
+
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+
+
+
+
+
+      <div ng-repeat="(name, r) in rs" ng-if="name == key_id">
+
+      <ion-list-card align="left">
+        <div class="item item-avatar Notes">
+        <img ng-src="{{r.pictureURL}}" width="50%" alt="">
+
+        <h2 class="fontNoteStyleTitle">{{r.name}}</h2>
+        <p class="fontNoteStyleDes"><i class="ion-sport"></i> Description: {{r.description}}</p>
+
+        <p class="fontNoteStyleDes">
+          <span style="color: #FFFFFF;"><i class="ion-paper-airplane"></i> </span>
+          <span ng-if="r.friend == true">   เพื่อน </span>
+          <span ng-if="r.family == true">   ครอบครัว </span>
+          <span ng-if="r.boy == true">   เพื่อนผู้ชาย </span>
+          <span ng-if="r.girl == true">   เพื่อนผู้หญิง </span>
+        </p>
+
+        <p class="fontNoteStyleDes"><i class="ion-sport"></i> หมวด: บันทึกโน๊ต</p>
+        </div>
+      </ion-list-card>
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="col">
+          <button class="button button-block" ng-click="addNotes.show()"><i class="ion-compose"></i> Write
+          </button>
+        </div>
+      </div>
+
+
+      <div ng-repeat="(name, r) in noteNoteRs">
+
+
+        <div ng-if="r.perKey == key_id">
+          <div class="list-card cardNote" ng-click="noteClick(name);">
+
+          <div class="item item-avatar pageNote">
+            <img src="img/note.png">
+            <h2>{{r.title}}</h2>
+            <p>Save on : <mydate>{{r.key | date: 'd MMM y HH:mm:ss' }}</mydate></p>
+          </div>
+          <div class="item item-body">
+            <h2>{{r.description}}</h2>
+          </div>
+
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view view-title="Favourites">
+  <ion-content class="appStyle" ng-controller="FavouritesController">
+
+
+      <div ng-repeat="(name, r) in rs" ng-if="name == key_id">
+
+      <ion-list-card align="left">
+        <div class="item item-avatar Notes">
+        <img ng-src="{{r.pictureURL}}" width="50%" alt="">
+
+        <h2 class="fontNoteStyleTitle">{{r.name}}</h2>
+        <p class="fontNoteStyleDes"><i class="ion-sport"></i> Description: {{r.description}}</p>
+
+        <p class="fontNoteStyleDes">
+          <span style="color: #FFFFFF;"><i class="ion-paper-airplane"></i> </span>
+          <span ng-if="r.friend == true">   เพื่อน </span>
+          <span ng-if="r.family == true">   ครอบครัว </span>
+          <span ng-if="r.boy == true">   เพื่อนผู้ชาย </span>
+          <span ng-if="r.girl == true">   เพื่อนผู้หญิง </span>
+        </p>
+
+        <p class="fontNoteStyleDes"><i class="ion-sport"></i> หมวด: ความชอบ</p>
+        </div>
+      </ion-list-card>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button class="button button-block button-calm" ng-click="addFav(true);"><i class="ion-heart"></i> Add Favourite
+          </button>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="list card">
+        <div class="item item-avatar" ng-repeat="(name, r) in favRs" ng-if="r.perKey == key_id" ng-click="noteClick(name);" align="left">
+          <img ng-src="{{r.pictureURL}}">
+          <h2>{{r.title}}</h2>
+          <p>Save on : <mydate>{{r.key | date: 'd MMM y HH:mm:ss' }}</mydate></p>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

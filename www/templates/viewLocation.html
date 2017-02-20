@@ -1,0 +1,52 @@
+<ion-view view-title="Location">
+  <ion-content class="appStyle">
+
+
+
+    <div ng-repeat="(name, r) in rs" ng-if="name == key_id">
+
+    <ion-list-card align="left">
+      <div class="item item-avatar Notes">
+      <img ng-src="{{r.pictureURL}}" width="50%" alt="">
+
+      <h2 class="fontNoteStyleTitle">{{r.name}}</h2>
+      <p class="fontNoteStyleDes"><i class="ion-sport"></i> Description: {{r.description}}</p>
+
+      <p class="fontNoteStyleDes">
+        <span style="color: #FFFFFF;"><i class="ion-paper-airplane"></i> </span>
+        <span ng-if="r.friend == true">   เพื่อน </span>
+        <span ng-if="r.family == true">   ครอบครัว </span>
+        <span ng-if="r.boy == true">   เพื่อนผู้ชาย </span>
+        <span ng-if="r.girl == true">   เพื่อนผู้หญิง </span>
+      </p>
+
+      <p class="fontNoteStyleDes"><i class="ion-sport"></i> หมวด: ความชอบ</p>
+      </div>
+    </ion-list-card>
+    </div>
+
+
+            <div class="row">
+              <div class="col">
+                <button class="button button-block button-outline button-calm" ng-click="addLocation(true);"><i class="ion-location"></i> Add Location
+                </button>
+              </div>
+            </div>
+
+
+
+    <div class="list card" ng-repeat="(name, r) in loRs" ng-if="r.perKey == key_id" ng-click="noteClick(name);" align="left">
+    <div class="item item-avatar">
+      <img src="img/location.png">
+      <h2>Location  <i class="ion-location"></i></h2>
+      <p>Time at : <mydate>{{r.key | date: 'd MMM y HH:mm:ss' }}</mydate></p>
+    </div>
+    <div class="item item-body">
+    {{r.address}}
+    </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

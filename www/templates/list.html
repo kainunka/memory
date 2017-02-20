@@ -1,0 +1,24 @@
+<ion-view view-title="Personal">
+  <ion-content class="appStyle" ng-controller="listController">
+
+    <ion-content>
+
+
+        <ion-item ng-repeat="brand in brands"
+                  item="brand">
+          {{brand.title}}
+          <br>
+          <br>
+          <ion-scroll direction="x">
+            <div ng-repeat="app in brand.apps" item="app" style='display: inline-block; margin: 10px;'>
+              <i class="{{app.icon}}" style='font-size: 30px;'></i>
+              {{app.title}}
+              <br>
+              <br>
+            </div>
+          </ion-scroll>
+        </ion-item>
+
+    </ion-content>
+
+</ion-view>

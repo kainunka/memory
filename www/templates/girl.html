@@ -1,0 +1,71 @@
+<ion-view view-title="Girl Personal">
+  <ion-content class="appStyle" ng-controller="HomeController">
+
+        <div class="box 4">
+          <ion-list-card>
+              <div class="item item-avatar pageGirl">
+              <img ng-src="img/girl.png">
+              <h2>Girl</h2>
+              <p>เพศหญิงที่คุณได้รู้จัก</p>
+              </div>
+          </ion-list-card>
+          <div class="pageContent">
+
+            <div class="row unlimited-items">
+              <div class="col" ng-repeat="(name, r) in rs" ng-if="r.girl == true">
+
+                <div ng-if="r.favourite == true">
+
+                  <ion-card ng-click="{{clickPerson}}">
+                    <div style="{{bgStyle}}">
+                        <div class="{{animate}} cardPic">
+                            <img ng-src="{{r.pictureURL}}" width="100%" alt="">
+                        </div>
+
+                        <div class="{{animate}} item item-divider cardName" align="left">
+
+                            <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                            <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                            {{r.name}}
+                            <p>{{r.description}}</p>
+                        </div>
+                    </div>
+                  </ion-card>
+                </div>
+
+                  <div ng-if="r.favourite == false">
+
+                    <ion-card ng-click="{{clickPerson}}">
+                      <div style="{{bgStyle}}">
+                          <div class="{{animate}} cardPic">
+                              <img ng-src="{{r.pictureURL}}" width="100%" alt="">
+                          </div>
+
+                          <div class="{{animate}} item item-divider cardName" align="left">
+
+                              <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                              <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                              {{r.name}}
+                              <p>{{r.description}}</p>
+                          </div>
+                      </div>
+                    </ion-card>
+                  </div>
+
+                </div>
+
+
+                <div class="col" ng-if="countGirl == 0">
+                    {{errNoPer}}
+                </div>
+
+              </div>
+
+
+
+          </div>
+        </div>
+
+
+  </ion-content>
+</ion-view>

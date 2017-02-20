@@ -1,0 +1,48 @@
+<ion-view view-title="Personal Profile">
+  <ion-content class="appStyle" ng-controller="PersonalController">
+
+
+<div ng-repeat="(name,r) in rs" ng-if="name == keyPerson">
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Name" ng-model="r.name">
+  </label>
+
+  <label class="item item-input">
+    <textarea rows="5" cols="80" placeholder="Description" ng-model="r.description"></textarea>
+  </label>
+
+
+    <ion-list align="left">
+      <ion-checkbox ng-model="r.friend">My Friend</ion-checkbox>
+      <ion-checkbox ng-model="r.family">My Family</ion-checkbox>
+      <ion-checkbox ng-model="r.boy">Boy</ion-checkbox>
+      <ion-checkbox ng-model="r.girl">Girl</ion-checkbox>
+    </ion-list>
+
+    <ion-list align="left">
+      <ion-checkbox ng-model="r.favourite">My Favourite</ion-checkbox>
+    </ion-list>
+
+
+
+
+    <label class="item item-image"  ng-click="clickPic();">
+        <img ng-src="{{r.pictureURL}}" alt="" width="100%" ng-model="pictureURL">
+
+    </label>
+
+  <label class="item item-button" >
+    <button class="button button-block button-energized" ng-click="UpdateProfile(name, r.key, r.name, r.description, r.friend, r.family, r.boy, r.girl, r.favourite, pictureURL);">Update Profile</button>
+  </label>
+</div>
+
+</div>
+
+
+
+
+
+  </ion-content>
+</ion-view>

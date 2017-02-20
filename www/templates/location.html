@@ -1,0 +1,23 @@
+<ion-view view-title="Location" ng-init="init()">
+
+
+  <ion-nav-buttons side="right">
+    <div class="buttons buttons-right header-item">
+    <span class="right-buttons">
+    <button class="button button-icon button-clear ion-android-more-vertical"> </button>
+    </span>
+    </div>
+    </ion-nav-buttons>
+
+  <ion-content>
+  <div id="map" data-tap-disabled="true"></div>
+  </ion-content>
+
+  <ion-footer-bar class="bar-dark">
+
+        <button class="button button-outline button-calm" ng-click="sendLocation()">Send Location</button>
+
+  </ion-footer-bar>
+
+
+</ion-view>

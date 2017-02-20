@@ -1,0 +1,63 @@
+<ion-view view-title="Lovers">
+  <ion-content class="appStyle">
+
+
+    <div class="box 4" ng-controller="LoversController">
+
+      <ion-list-card>
+        <div class="item item-text-wrap pageLover" align="center">
+          <img src="img/lover.png">
+            <h2>{{titleText}}</h2>
+            <p>ส่งข้อความให้คนสำคัญของคุณ</p>
+        </div>
+      </ion-list-card>
+
+
+      <div class="row">
+        <div class="col">
+        <div class="list list-inset">
+
+          <form>
+          <label class="item item-input">
+            <input type="text" placeholder="Input ID Girl or Boy Friend" ng-model="data.pushID" name="pushID">
+          </label>
+          <label class="item item-input">
+            <textarea placeholder="Input Message Notification" rows="5" ng-model="data.messageID" name="messageID"></textarea>
+          </label>
+        </form>
+
+
+        </div>
+      </div>
+      </div>
+
+      <div class="row" align="center">
+        <div class="col">
+          {{myTimer}}
+        </div>
+      </div>
+
+      <div class="row" align="center" ng-show="startNoti">
+        <div class="col">
+          <button class="button button-block button-block" ng-click="sendNotification(data.pushID, data.messageID);">
+            <i class="ion-plus"></i> Push Notification {{myTimer}} Seconds
+          </button>
+        </div>
+      </div>
+
+
+      <div class="row" align="center" ng-show="stopNoti">
+        <div class="col">
+          <button class="button button-block button-block" ng-click="stopNotification();">
+            <i class="ion-stop"></i> Stop Notification
+          </button>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </ion-content>
+</ion-view>

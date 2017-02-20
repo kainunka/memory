@@ -1,0 +1,54 @@
+<ion-view view-title="Note">
+
+<ion-content class="appStyle" ng-controller="NoteManageController">
+
+
+  <ion-list-card>
+  <div class="item item-avatar Notes" align="right">
+    <h2 class="fontNoteStyleTitle"><i class="ion-plus"></i> Add Note</h2>
+    <p class="fontNoteStyleDes"><i class="ion-sport"></i> เพิ่มโน๊ตของเพื่อนคนนี้</p>
+  </div>
+  </ion-list-card>
+
+
+
+<div ng-repeat="(name, r) in noteNoteRs" ng-if="name == key_edit">
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Title" ng-model="r.title" >
+  </label>
+
+  <label class="item item-input">
+    <textarea rows="5" cols="80" placeholder="Description" ng-model="r.description"></textarea>
+  </label>
+
+  <div class="col" align="center">
+
+      <button class="button button-outline button-block button-energized" ng-click="submitEdit(name, r.key, r.perKey, r.title, r.description)">Edit Note</button>
+
+  </div>
+</div>
+</div>
+
+
+<div ng-if="key_add">
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Title" ng-model="r.title" >
+  </label>
+
+  <label class="item item-input">
+    <textarea rows="5" cols="80" placeholder="Description" ng-model="r.description"></textarea>
+  </label>
+
+  <div class="col" align="center">
+
+      <button class="button button-outline button-block button-calm" ng-click="submitAdd(r.title, r.description)">Add Note</button>
+
+  </div>
+</div>
+</div>
+
+
+  </ion-content>
+</ion-view>

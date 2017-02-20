@@ -1,0 +1,274 @@
+<ion-view view-title="Personal">
+  <ion-content class="appStyle" ng-controller="HomeController">
+
+
+        <div class="box">
+          <ion-list-card>
+            <div class="item item-text-wrap pageFriend" align="center">
+              <img src="img/avartar.png">
+
+                <h2>Get Book Story</h2>
+                <p>บันทึกเรื่องราวความทรงจำของคุณ</p>
+
+
+            </div>
+          </ion-list-card>
+
+
+          <div class="row pageNav" align="center">
+            <div class="col">
+              <button class="button button-block" ng-click="addClick();">
+                <i class="ion-plus-circled"></i> Add Person
+              </button>
+            </div>
+
+            <div class="col">
+              <button class="button button-block" ng-click="loversMode();">
+                <i class="ion-fireball"></i> Push Notification
+              </button>
+            </div>
+          </div>
+
+
+          <div class="row pageNav" align="left">
+            <div class="col" style="margin-right: 10px;" align="left">
+            <button class="button button-clear" style="font-weight:bold; color: #000000;">
+              <img src="img/friend.png" height="20"> การพบกันกับเพื่อนของคุณ
+            </button>
+
+            <button class="button button-clear button-positive" style="font-weight:bold;" ng-click="goPersonFriend()">
+              <i class="ion-plus-circled"></i> More
+            </button>
+            </div>
+          </div>
+
+
+
+          <div class="pageContent">
+
+            <ion-item>
+            <ion-scroll direction="x">
+              <div ng-repeat="(name,r) in rs" ng-if="r.friend == true && r.favourite == true" style='display: inline-block; margin: 10px;'>
+                  <ion-card  ng-click="{{clickPerson}}">
+                    <div style="{{bgStyle}}">
+                        <div class="{{animate}} cardPic" align="center">
+                            <img ng-src="{{r.pictureURL}}" height="128" alt="">
+                        </div>
+
+                        <div class="{{animate}} item item-divider cardName" align="left">
+
+                            <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                            <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                            {{r.name}}
+                            <p>{{r.description}}</p>
+                        </div>
+                    </div>
+
+                    
+                  </ion-card>
+              </div>
+
+
+              <div ng-if="countFriend != 0">
+                <div ng-if="countFavFriend == 0">
+                  <div align="center">
+                    {{errNoFav}}
+                  </div>
+                </div>
+              </div>
+
+
+              <div ng-if="countFriend == 0">
+                <div align="center">
+                  {{errNoPer}}
+                </div>
+              </div>
+            </div>
+
+
+              </ion-scroll>
+            </ion-item>
+
+
+
+            <div class="row pageNav" align="left">
+              <div class="col" style="margin-right: 10px;" align="left">
+              <button class="button button-clear" style="font-weight:bold; color: #000000;">
+                <img src="img/family.png" height="20"> บันทึกเกี่ยวกับครอบครัว
+              </button>
+
+              <button class="button button-clear button-assertive" style="font-weight:bold;" ng-click="goPersonFamily()">
+                <i class="ion-plus-circled"></i> More
+              </button>
+              </div>
+            </div>
+
+
+
+            <div class="pageContent">
+              <ion-item>
+              <ion-scroll direction="x">
+                <div ng-repeat="(name,r) in rs" ng-if="r.family == true && r.favourite == true" style='display: inline-block; margin: 10px;'>
+
+
+                    <ion-card ng-click="{{clickPerson}}">
+
+                      <div style="{{bgStyle}}">
+                          <div class="{{animate}} cardPic" align="center">
+                              <img ng-src="{{r.pictureURL}}" height="128"  alt="">
+                          </div>
+
+                          <div class="{{animate}} item item-divider cardName" align="left">
+
+                              <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                              <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                              {{r.name}}
+                              <p>{{r.description}}</p>
+                          </div>
+                      </div>
+                    </ion-card>
+                    </div>
+
+                    <div ng-if="countFamily != 0">
+                      <div ng-if="countFavFamily == 0">
+                        <div align="center">
+                          {{errNoFav}}
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div ng-if="countFamily == 0">
+                      <div align="center">
+                        {{errNoPer}}
+                      </div>
+                    </div>
+                  </div>
+
+                </ion-scroll>
+              </ion-item>
+
+
+
+
+              <div class="row pageNav" align="left">
+                <div class="col" style="margin-right: 10px;" align="left">
+                <button class="button button-clear" style="font-weight:bold; color: #000000;">
+                  <img src="img/boy.png" height="20"> เพื่อนชายที่คุณได้รู้จัก
+                </button>
+
+                <button class="button button-clear button-balanced" style="font-weight:bold;" ng-click="goPersonBoy()">
+                  <i class="ion-plus-circled"></i> More
+                </button>
+                </div>
+              </div>
+
+
+
+              <div class="pageContent">
+                <ion-item>
+                <ion-scroll direction="x">
+                  <div ng-repeat="(name,r) in rs" ng-if="r.boy == true && r.favourite == true" style='display: inline-block; margin: 10px;'>
+
+
+                      <ion-card ng-click="{{clickPerson}}">
+
+                        <div style="{{bgStyle}}">
+                            <div class="{{animate}} cardPic" align="center">
+                                <img ng-src="{{r.pictureURL}}" height="128"  alt="">
+                            </div>
+
+                            <div class="{{animate}} item item-divider cardName" align="left">
+
+                                <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                                <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                                {{r.name}}
+                                <p>{{r.description}}</p>
+                            </div>
+                        </div>
+                      </ion-card>
+                      </div>
+
+                      <div ng-if="countBoy != 0">
+                        <div ng-if="countFavBoy == 0">
+                          <div align="center">
+                            {{errNoFav}}
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div ng-if="countBoy == 0">
+                        <div align="center">
+                          {{errNoPer}}
+                        </div>
+                      </div>
+                    </div>
+
+                  </ion-scroll>
+                </ion-item>
+
+
+
+                <div class="row pageNav" align="left">
+                  <div class="col" style="margin-right: 10px;" align="left">
+                  <button class="button button-clear" style="font-weight:bold; color: #000000;">
+                    <img src="img/girl.png" height="20"> เพื่อนหญิงที่คุณได้รู้จัก
+                  </button>
+
+                  <button class="button button-clear button-energized" style="font-weight:bold;" ng-click="goPersonGirl()">
+                    <i class="ion-plus-circled"></i> More
+                  </button>
+                  </div>
+                </div>
+
+
+
+                <div class="pageContent">
+                  <ion-item>
+                  <ion-scroll direction="x">
+                    <div ng-repeat="(name,r) in rs" ng-if="r.girl == true && r.favourite == true" style='display: inline-block; margin: 10px;'>
+
+
+                        <ion-card ng-click="{{clickPerson}}">
+
+                          <div style="{{bgStyle}}">
+                              <div class="{{animate}} cardPic" align="center">
+                                  <img ng-src="{{r.pictureURL}}" height="128"  alt="">
+                              </div>
+
+                              <div class="{{animate}} item item-divider cardName" align="left">
+
+                                  <i class="{{iconFav}}" ng-if="r.favourite == true"></i>
+                                  <i class="{{iconPer}}" ng-if="r.favourite == false"></i>
+                                  {{r.name}}
+                                  <p>{{r.description}}</p>
+                              </div>
+                          </div>
+                        </ion-card>
+                        </div>
+
+                        <div ng-if="countGirl != 0">
+                          <div ng-if="countFavGirl == 0">
+                            <div align="center">
+                              {{errNoFav}}
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div ng-if="countGirl == 0">
+                          <div align="center">
+                            {{errNoPer}}
+                          </div>
+                        </div>
+                      </div>
+
+                    </ion-scroll>
+                  </ion-item>
+
+          </div>
+
+
+  </ion-content>
+</ion-view>
